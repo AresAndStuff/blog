@@ -1,0 +1,50 @@
+---
+import Footer from '../components/Footer.astro';
+import Nav from '../components/Nav.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  frontmatter?: string;
+  robots?: string;
+}
+
+const {
+  title = 'My Astro Blog',
+  description = 'My musings about the Astro framework',
+  frontmatter,
+  robots,
+} = Astro.props as Props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <!-- TODO: Implement Seo
+        <Seo {title} {description} url={Astro.url} {image} {frontmatter} {robots} /> -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" /><link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    /><link
+      href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <Nav {title} {description} />
+  <body>
+    <main>
+      <slot> Default Text</slot>
+    </main>
+    <Footer />
+  </body>
+
+</html>
