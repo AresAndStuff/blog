@@ -1,12 +1,12 @@
 ---
 import MainLayout from '../../layouts/MainLayout.astro';
 
-const {post} = Astro.params
+const { post } = Astro.params;
 ---
 
 <MainLayout
-  title="Ares Dovalo Taboas"
-  description="Blog landingpage from Ares Dovalo Taboas"
+  title={'first post'}
+  description="post about the first post in the list of posts"
 >
-  welcome to my blog
+  welcome to my blog {post}
 </MainLayout>
