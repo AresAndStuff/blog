@@ -1,7 +1,8 @@
 ---
-
+import ThemeToggleButton from "../components/ThemeToggleButton";
 ---
 
-<nav class="bg-primary_dark text-secondary">
-  <img src="" alt="logo">
+<nav class="bg-primary_dark text-secondary flex px-10 py-1 justify-between">
+  <img src="logo.svg" alt="logo" class="h-20 py-3" />
+  <ThemeToggleButton client:load />
 </nav>
