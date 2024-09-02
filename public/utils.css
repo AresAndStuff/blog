@@ -19,3 +19,8 @@
     --color_secondary: #413d4d;
   }
 }
+
+html,
+body {
+  height: 100%;
+}

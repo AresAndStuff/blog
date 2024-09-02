@@ -1,8 +1,19 @@
 ---
-import ThemeToggleButton from "../components/ThemeToggleButton";
+import { Image } from 'astro:assets';
+import ThemeToggleButton from '../components/ThemeToggleButton';
+import Icon from './Icon.astro';
 ---
 
-<nav class="bg-primary_dark text-secondary flex px-10 py-1 justify-between">
-  <img src="logo.svg" alt="logo" class="h-20 py-3" />
+<nav
+  class="bg-primary_dark text-secondary p-5 flex fixed w-full items-center justify-between shadow-2xl"
+>
+  <Icon size="3rem" />
+  <div class="flex gap-6">
+    <span><a href="/Algorithms">Algorithms</a></span>
+    <span><a href="/Projects">Projects</a></span>
+    <span><a href="/Problem-solving">Problem solving</a></span>
+    <span><a href="/Blog">Blog</a></span>
+    <span><a href="/About-me">About me</a></span>
+  </div>
   <ThemeToggleButton client:load />
 </nav>
