@@ -1,8 +1,8 @@
 ---
-import Footer from '../components/Footer.astro';
-import Nav from '../components/Nav.astro';
-import '../../public/utils.css';
-import { ViewTransitions } from 'astro:transitions';
+import Footer from "../components/Footer.astro";
+import Nav from "../components/Nav.astro";
+import "@/styles/main.scss";
+import { ViewTransitions } from "astro:transitions";
 
 interface Props {
   title: string;
@@ -12,14 +12,14 @@ interface Props {
 }
 
 const {
-  title = 'My Astro Blog',
-  description = 'My musings about the Astro framework',
+  title = "My Astro Blog",
+  description = "My musings about the Astro framework",
   frontmatter,
   robots,
 } = Astro.props as Props;
 ---
 
-<html lang="en" class="">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/logo.svg" />
@@ -42,13 +42,13 @@ const {
   </head>
 
   <Nav {title} {description} />
-  <body>
-    <main class="bg-primary min-h-full text-secondary">
-      <slot> Default Text</slot>
-    </main>
-    <Footer />
-  </body>
+  <main class="min-h-full text-secondary">
+    <h1 class="h1">{title}</h1>
+    <slot> Default Text</slot>
+  </main>
+  <Footer />
 
   <ViewTransitions />
+
 
 </html>

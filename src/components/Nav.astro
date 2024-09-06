@@ -1,11 +1,15 @@
 ---
-import { Image } from 'astro:assets';
-import ThemeToggleButton from '../components/ThemeToggleButton';
-import Icon from './Icon.astro';
+import { Image } from "astro:assets";
+import ThemeToggleButton from "../components/ThemeToggleButton";
+import Icon from "./Icon.astro";
+import { userPreferences } from "@/hooks/userPreferences.ts";
+
+const test = userPreferences.get()["dark-web-theme"];
 ---
 
 <nav
-  class="bg-primary_dark text-secondary p-5 flex fixed w-full items-center justify-between shadow-2xl"
+  class={(test ? "bg-black" : "bg-white") +
+    " bg- text-secondary p-5 flex sticky w-full items-center justify-between shadow-2xl z-50 top-0"}
 >
   <Icon size="3rem" />
   <div class="flex gap-6">
@@ -15,5 +19,6 @@ import Icon from './Icon.astro';
     <span><a href="/Blog">Blog</a></span>
     <span><a href="/About-me">About me</a></span>
   </div>
+  <p>{test}</p>
   <ThemeToggleButton client:load />
 </nav>
